@@ -6,10 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
+
+    <!--CSS and Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200;300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/landing.css" />
+    <script src="https://kit.fontawesome.com/ebd4c0f83f.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <h1>Weather</h1>
+    <div id="layout">
+        <img src="images/cloudy.jpg" alt="" id="layout-bg">
+        <h1>Weather</h1>
+        <div id="card">
+            <img src="images/cloudy.jpg" alt="cloudy">
+        </div>
+        <label for="search"></label>
+        <input type="text" name="search" id="search" placeholder="Enter city name: ">
+    </div>
 </body>
 
 </html>
