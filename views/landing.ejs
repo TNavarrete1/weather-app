@@ -13,20 +13,37 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200;300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/root.css">
     <link rel="stylesheet" href="css/landing.css" />
     <script src="https://kit.fontawesome.com/ebd4c0f83f.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body class="theme-light">
     <div id="layout">
-        <img src="images/cloudy.jpg" alt="" id="layout-bg">
-        <h1>Weather</h1>
-        <div id="card">
-            <img src="images/cloudy.jpg" alt="cloudy">
+        <img src="images/snow.jpg" alt="" id="layout-bg">
+        <div id="main-data">
+            <header>AnyWeather</header>
+            <div id="main-data-wrapper">
+                <h1 id="degrees">60<sup>o</sup></h1>
+                <h2 id="city">National City</h2>
+                <p id="date">22:00 Wednesday 10, 12 2022</p>
+                <img src="/images/day/113.png" alt="image" id="icon">
+                <p id="weather-type">Sunny</p>
+            </div>
         </div>
-        <label for="search"></label>
-        <input type="text" name="search" id="search" placeholder="Enter city name: ">
+        <div id="card">
+            <div id="search-container">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <label for="search"></label>
+                <input type="text" name="search" id="search" placeholder="Search location">
+            </div>
+            <div>sunrise and sunset</div>
+            <span class="section-divider"></span>
+            <header>Weather Data</header>
+        </div>
     </div>
 </body>
 
