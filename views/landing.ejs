@@ -23,21 +23,21 @@
 
 <body class="theme-light">
     <div id="layout">
-        <img src="images/random.jpg" alt="" id="layout-bg">
+        <div id="layout-bg" style="--url: url('/images/random.jpg');"></div>
         <div id="main-data">
             <header>AnyWeather</header>
             <div id="main-data-wrapper">
                 <h1 id="degrees">
                     <span id="degrees-num">
-                        20
+                        NA
                     </span>
                     <sup>o</sup>
                 </h1>
-                <p id="date">00:00:00</p>
+                <p id="date">NA:NA:NA</p>
                 <img src="//cdn.weatherapi.com/weather/64x64/day/317.png" alt="weather icon" id="icon">
-                <p id="weather-type">Cold</p>
+                <p id="weather-type">NA</p>
                 <h2 id="city">
-                    Moon
+                    Unavailable
                 </h2>
             </div>
         </div>
@@ -55,7 +55,7 @@
                     <i class="fa-solid fa-circle-half-stroke cycle-icon"
                         style="--degrees: 90deg; --background: var(--color-dark); --color: var(--color-orange);"></i>
                     <div class="cycle-type">SUNRISE</div>
-                    <div class="cycle-time" id="sunrise-time">00:00 AM</div>
+                    <div class="cycle-time" id="sunrise-time">NA:NA AM</div>
                 </div>
                 <div class="cycle-graph-container" id="sun-graph">
                     <div class="sun-moon-icons" id="sun-icon"
@@ -73,13 +73,13 @@
                     <i class="fa-solid fa-circle-half-stroke cycle-icon"
                         style="--degrees: -90deg; --background: var(--color-dark); --color: var(--color-orange);"></i>
                     <div class="cycle-type">SUNSET</div>
-                    <div class="cycle-time" id="sunset-time">00:00 PM</div>
+                    <div class="cycle-time" id="sunset-time">NA:NA PM</div>
                 </div>
                 <div class="cycle-info" id="moonset">
                     <i class="fa-solid fa-circle-half-stroke cycle-icon"
                         style="--degrees: -90deg; --background: var(--color-dark-gray); --color: var(--color-gray);"></i>
                     <div class="cycle-type">MOONSET</div>
-                    <div class="cycle-time" id="moonset-time">00:00 AM</div>
+                    <div class="cycle-time" id="moonset-time">NA:NA AM</div>
                 </div>
                 <div class="cycle-graph-container" id="moon-graph">
                     <div class="sun-moon-icons" id="moon-icon"
@@ -110,7 +110,7 @@
                         </div>
                         Wind
                     </div>
-                    <div class="item-data" id="wind">0 MPH</div>
+                    <div class="item-data" id="wind">NA MPH</div>
                 </div>
 
                 <div class="weather-item">
@@ -120,7 +120,7 @@
                         </div>
                         Wind Degree
                     </div>
-                    <div class="item-data"><span id="wind-degree">0</span><sup>o</sup></div>
+                    <div class="item-data"><span id="wind-degree">NA</span><sup>o</sup></div>
                 </div>
 
                 <div class="weather-item">
@@ -130,7 +130,7 @@
                         </div>
                         Humidity
                     </div>
-                    <div class="item-data" id="humidity">0%</div>
+                    <div class="item-data" id="humidity">NA%</div>
                 </div>
 
                 <div class="weather-item">
@@ -140,7 +140,7 @@
                         </div>
                         Cloud
                     </div>
-                    <div class="item-data" id="cloud"> 0%</div>
+                    <div class="item-data" id="cloud"> NA%</div>
                 </div>
 
                 <div class="weather-item">
@@ -150,7 +150,7 @@
                         </div>
                         Feels Like
                     </div>
-                    <div class="item-data"><span id="feelslike">-5</span><sup>o</sup></div>
+                    <div class="item-data"><span id="feelslike">NA</span><sup>o</sup></div>
                 </div>
 
                 <div class="weather-item">
@@ -160,7 +160,7 @@
                         </div>
                         Gust
                     </div>
-                    <div class="item-data" id="gust">0 MPH</div>
+                    <div class="item-data" id="gust">NA MPH</div>
                 </div>
             </div>
         </div>

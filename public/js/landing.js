@@ -230,34 +230,34 @@ function debouncer(func, timeout = 500) {
     // Update background image with weather codes
     const layoutBg = document.querySelector("#layout-bg");
     if (weather.condition_code == 1000) {
-      layoutBg.src = "images/sunny.jpg";
+      layoutBg.style.setProperty("--url", "url('/images/sunny.jpg')");
     } else if (weather.condition_code == 1003) {
-      layoutBg.src = "images/partial-clouds.jpg";
+      layoutBg.style.setProperty("--url", "url('/images/partial-clouds.jpg')");
     } else if (weather.condition_code == 1006) {
-      layoutBg.src = "images/cloudy.jpg";
+      layoutBg.style.setProperty("--url", "url('/images/cloudy.jpg')");
     } else if (weather.condition_code == 1009) {
-      layoutBg.src = "images/overcast.jpg";
+      layoutBg.style.setProperty("--url", "url('/images/overcast.jpg')");
     } else if ([1030, 1135, 1147].includes(weather.condition_code)) {
-      layoutBg.src = "images/fog.jpg";
+      layoutBg.style.setProperty("--url", "url('/images/fog.jpg')");
     } else if (
       [
         1063, 1180, 1183, 1186, 1189, 1192, 1195, 1198, 1201, 1240, 1243, 1246,
       ].includes(weather.condition_code)
     ) {
-      layoutBg.src = "images/rain.jpg";
+      layoutBg.style.setProperty("--url", "url('/images/rain.jpg')");
     } else if ([1072, 1150, 1153, 1168, 1171].includes(weather.condition_code)) {
-      layoutBg.src = "images/drizzle.jpg";
+      layoutBg.style.setProperty("--url", "url('/images/drizzle.jpg')");
     } else if (
       [
         1066, 1069, 1114, 1117, 1204, 1207, 1210, 1213, 1216, 1219, 1222, 1225,
         1237, 1249, 1252, 1255, 1258, 1261, 1264,
       ].includes(weather.condition_code)
     ) {
-      layoutBg.src = "images/snow.jpg";
+      layoutBg.style.setProperty("--url", "url('/images/snow.jpg')");
     } else if ([1087, 1273, 1276, 1279, 1282].includes(weather.condition_code)) {
-      layoutBg.src = "images/storm.jpg";
+      layoutBg.style.setProperty("--url", "url('/images/storm.jpg')");
     } else {
-      layoutBg.src = "images/random.jpg";
+      layoutBg.style.setProperty("--url", "url('/images/random.jpg')");
     }
   }
   const getWeatherData = async (searchText) => {
