@@ -8,10 +8,13 @@
 }
 
 #layout-bg {
+    display: inline;
     position: absolute;
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    background: var(--url) no-repeat;
+    background-size: cover;
+    background-color: var(--color-dark);
     z-index: -1;
     filter: brightness(0.7);
 }
