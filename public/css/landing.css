@@ -1,132 +1,497 @@
 #layout {
-  display: flex;
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  color: var(--color-light);
-  font-family: var(--font-primary);
+    display: flex;
+    position: relative;
+    width: 100vw;
+    min-width: 100vw;
+    color: var(--color-light);
+    font-family: var(--font-primary);
 }
+
 #layout-bg {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  z-index: -1;
-  filter: brightness(0.7);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.7);
 }
 
 #main-data {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  padding: 40px 60px 80px 60px;
-  width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    margin: 40px 60px 0 60px;
+    padding-bottom: 80px;
+    width: 65%;
+    overflow-x: scroll;
 }
+
 #main-data header {
-  font-size: 18px;
-  font-weight: 600;
+    font-size: 18px;
+    font-weight: 600;
 }
+
 #main-data-wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, min-content);
-  grid-template-rows: repeat(2, min-content);
-  grid-template-areas:
-    "degrees city city icon"
-    "degrees date date weather-type";
-  column-gap: 50px;
-  row-gap: 20px;
-  white-space: nowrap;
+    display: grid;
+    grid-template-columns: min-content min-content auto auto;
+    grid-template-rows: repeat(2, min-content);
+    grid-template-areas:
+        "degrees icon city city"
+        "degrees weather-type date date";
+    column-gap: 35px;
+    row-gap: 20px;
+    white-space: wrap;
 }
+
 #degrees {
-  grid-area: degrees;
-  font-size: 150px;
-  font-weight: 400;
+    grid-area: degrees;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font-size: 115px;
+    font-weight: 400;
 }
+
 #degrees sup {
-  position: relative;
-  top: -15px;
-  right: -7px;
-  font-family: var(--font-tertiary);
-  font-size: 80px;
-  font-weight: 600;
+    position: relative;
+    top: -15px;
+    left: 10px;
+    font-family: var(--font-tertiary);
+    font-size: 70px;
+    font-weight: 600;
 }
+
 #city {
-  grid-area: city;
-  align-self: flex-end;
-  font-size: 50px;
+    grid-area: city;
+    align-self: flex-end;
+    font-size: 40px;
+    /* word-break: break-all; */
 }
+
 #date {
-  grid-area: date;
-  align-self: flex-start;
-  font-size: 18px;
-  font-family: var(--font-tertiary);
+    grid-area: date;
+    align-self: flex-start;
+    font-size: 18px;
+    font-family: var(--font-tertiary);
 }
+
 #icon {
-  grid-area: icon;
-  justify-self: center;
-  align-self: flex-end;
+    grid-area: icon;
+    justify-self: center;
+    align-self: flex-end;
 }
+
 #weather-type {
-  grid-area: weather-type;
-  justify-self: center;
-  align-self: flex-start;
-  font-size: 20px;
-  font-weight: 400;
+    grid-area: weather-type;
+    justify-self: center;
+    align-self: flex-start;
+    font-size: 20px;
+    font-weight: 400;
+    white-space: nowrap;
 }
 
 #card {
-  position: relative;
-  padding: 40px;
-  height: 100%;
-  width: 35%;
-  backdrop-filter: blur(10px);
-  background: rgba(0, 0, 0, 0.3);
-  box-shadow: 1px 1px 12px 8px rgba(0, 0, 0, 0.35);
-  border-left: 1px solid rgba(255, 255, 255, 0.25);
+    position: relative;
+    padding: 40px;
+    height: 100%;
+    min-height: 100vh;
+    width: 35%;
+    min-width: 450px;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 12px 8px rgba(0, 0, 0, 0.35);
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+    overflow-y: scroll;
 }
+
 #search-container {
-  display: flex;
-  align-items: center;
-  padding: 12.5px 20px;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50px;
-  transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 12.5px 20px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    transition: all 0.2s ease-in-out;
 }
+
 #search-container:focus-within {
-  box-shadow: inset 0 0 0 2px var(--color-light);
+    box-shadow: inset 0 0 0 2px var(--color-light);
 }
+
 #search-container i {
-  padding-right: 10px;
-  cursor: pointer;
+    padding-right: 10px;
+    cursor: pointer;
 }
+
 #search-container input {
-  width: 100%;
-  border: none;
-  outline: none;
-  font-size: 15px;
-  color: var(--color-light);
-  background: transparent;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: var(--color-light);
+    background: transparent;
 }
+
 #search-container input::placeholder {
-  color: var(--color-gray);
+    color: var(--color-gray);
 }
+
 /* Change Autocomplete styles in Chrome*/
 #search-container input:-webkit-autofill,
 #search-container input:-webkit-autofill:hover,
 #search-container input:-webkit-autofill:focus,
 #search-container input:-webkit-autofill:active {
-  transition: background-color 600000s 0s, color 600000s 0s;
+    transition: background-color 600000s 0s, color 600000s 0s;
 }
+
+#search-results {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    padding: 12.5px 20px;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    border-radius: 10px;
+    color: black;
+    background: var(--bg-light);
+    z-index: 100;
+}
+
+.suggestive-text {
+    margin: 0 -20px;
+    padding: 12.5px 20px;
+    width: calc(100% + 40px);
+    background: var(--bg-light);
+    cursor: pointer;
+}
+
+.suggestive-text:hover {
+    background: var(--bg-light-gray);
+}
+
+.search-selected {
+    background: var(--bg-light-gray);
+}
+
+#sunrise {
+    grid-area: sunrise;
+}
+
+#sun-graph {
+    grid-area: sun-graph;
+}
+
+#sunset {
+    grid-area: sunset;
+}
+
+#moonset {
+    grid-area: moonset;
+}
+
+#moon-graph {
+    grid-area: moon-graph;
+}
+
+#moonrise {
+    grid-area: moonrise;
+}
+
+#sun-moon-cycle-container {
+    display: grid;
+    grid-template-areas:
+        "sunrise sun-graph sun-graph sunset"
+        "moonset moon-graph moon-graph moonrise";
+    margin-top: 30px;
+    column-gap: 10px;
+    row-gap: 15px;
+}
+
+.cycle-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
+.cycle-icon {
+    rotate: var(--degrees);
+    background: var(--background);
+    color: var(--color);
+    border-radius: 50%;
+}
+
+.cycle-type {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--color-gray);
+}
+
+.cycle-time,
+.cycle-total-time {
+    font-weight: 500;
+}
+
+.cycle-graph-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    gap: 15px;
+}
+
+.sun-moon-icons {
+    display: flex;
+    align-items: var(--align-items);
+    position: absolute;
+    height: 75px;
+    width: 150px;
+    transform-origin: var(--transform-origin);
+    transform: rotate(var(--degrees));
+    transition: all 0.5s ease-out;
+    z-index: 1;
+}
+
+.sun-moon-icons i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: var(--top);
+    left: -10px;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    color: var(--color);
+    background: var(--background);
+}
+
+.cycle-graph {
+    height: 75px;
+    width: 150px;
+    --border-size: 5px;
+    border-top: var(--border-size) solid var(--graph-color);
+    border-left: var(--border-size) solid var(--graph-color);
+    border-right: var(--border-size) solid var(--graph-color);
+    border-radius: 100px 100px 0 0;
+    rotate: var(--degrees);
+}
+
 .section-divider {
-  display: block;
-  margin: 40px 0;
-  height: 2px;
-  width: 100%;
-  background: var(--color-light);
+    display: block;
+    margin: 50px 0;
+    height: 2px;
+    width: 100%;
+    background: var(--color-light);
 }
+
 #card header {
-  font-size: 18px;
-  font-weight: 500;
+    margin-bottom: 40px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#weather-data-container {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+    column-gap: 50px;
+    row-gap: 80px;
+    font-size: 17px;
+}
+
+.weather-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-text {
+    display: flex;
+    gap: 10px;
+}
+
+.item-icon {
+    color: var(--color-dark-gray);
+}
+
+/* Media Queries */
+@media screen and (max-width: 1320px) {
+    #weather-type {
+        justify-self: flex-start;
+        white-space: inherit;
+    }
+
+    #main-data-wrapper {
+        grid-template-columns: repeat(2, min-content) auto;
+        grid-template-rows: repeat(4, min-content);
+        grid-template-areas:
+            "city city city"
+            "date date ."
+            "degrees icon ."
+            "degrees weather-type weather-type";
+    }
+}
+
+@media screen and (max-width: 980px) {
+    #layout {
+        flex-direction: column;
+        overflow-y: scroll;
+    }
+
+    #main-data {
+        margin: 0;
+        padding: 40px 25px 40px 25px;
+        min-height: 40vh;
+        width: 100%;
+    }
+
+    #card {
+        min-height: 60vh;
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: none;
+        overflow: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #degrees {
+        font-size: 80px;
+    }
+
+    #degrees sup {
+        font-size: 50px;
+    }
+
+    #date {
+        font-size: 16px;
+    }
+
+    #city {
+        font-size: 30px;
+    }
+
+    #icon {
+        height: 50px;
+        width: 50px;
+    }
+
+    #weather-type {
+        font-size: 17px;
+    }
+
+    #card {
+        min-width: 280px;
+        padding: 40px 15px;
+    }
+
+    #weather-data-container {
+        column-gap: 30px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #degrees {
+        font-size: 65px;
+    }
+
+    #degrees sup {
+        font-size: 40px;
+    }
+
+    #date {
+        font-size: 14px;
+    }
+
+    #city {
+        font-size: 25px;
+    }
+
+    #icon {
+        height: 40px;
+        width: 40px;
+    }
+
+    #weather-type {
+        font-size: 15px;
+    }
+
+    #card {
+        min-width: 280px;
+        padding: 40px 15px;
+    }
+
+    .sun-moon-icons,
+    .cycle-graph {
+        height: 55px;
+        width: 110px;
+    }
+
+    .cycle-time,
+    .cycle-total-time {
+        font-size: 14px;
+    }
+
+    .sun-moon-icons i {
+        height: 23px;
+        width: 23px;
+        font-size: 15px;
+    }
+
+    #weather-data-container {
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(6, auto);
+        column-gap: 30px;
+        row-gap: 50px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #degrees {
+        font-size: 55px;
+    }
+
+    #degrees sup {
+        font-size: 35px;
+    }
+
+    #date {
+        font-size: 13px;
+    }
+
+    #city {
+        font-size: 23px;
+    }
+
+    #icon {
+        height: 35px;
+        width: 35px;
+    }
+
+    #weather-type {
+        font-size: 14px;
+    }
+
+    .sun-moon-icons,
+    .cycle-graph {
+        height: 45px;
+        width: 90px;
+    }
+
+    .cycle-time,
+    .cycle-total-time {
+        font-size: 12px;
+    }
+
+    .sun-moon-icons i {
+        height: 20px;
+        width: 20px;
+        font-size: 13px;
+    }
 }

@@ -23,28 +23,151 @@
 
 <body class="theme-light">
     <div id="layout">
-        <img src="images/snow.jpg" alt="" id="layout-bg">
+        <img src="images/random.jpg" alt="" id="layout-bg">
         <div id="main-data">
             <header>AnyWeather</header>
             <div id="main-data-wrapper">
-                <h1 id="degrees">60<sup>o</sup></h1>
-                <h2 id="city">National City</h2>
-                <p id="date">22:00 Wednesday 10, 12 2022</p>
-                <img src="/images/day/113.png" alt="image" id="icon">
-                <p id="weather-type">Sunny</p>
+                <h1 id="degrees">
+                    <span id="degrees-num">
+                        20
+                    </span>
+                    <sup>o</sup>
+                </h1>
+                <p id="date">00:00:00</p>
+                <img src="//cdn.weatherapi.com/weather/64x64/day/317.png" alt="weather icon" id="icon">
+                <p id="weather-type">Cold</p>
+                <h2 id="city">
+                    Moon
+                </h2>
             </div>
         </div>
         <div id="card">
-            <div id="search-container">
-                <i class="fa-solid fa-magnifying-glass"></i>
+            <div id="search-container" tabindex="0">
+                <i class="fa-solid fa-magnifying-glass" id="search-button"></i>
                 <label for="search"></label>
                 <input type="text" name="search" id="search" placeholder="Search location">
+                <div id="search-results" style="display: none;">
+                    No results found...
+                </div>
             </div>
-            <div>sunrise and sunset</div>
+            <div id="sun-moon-cycle-container">
+                <div class="cycle-info" id="sunrise">
+                    <i class="fa-solid fa-circle-half-stroke cycle-icon"
+                        style="--degrees: 90deg; --background: var(--color-dark); --color: var(--color-orange);"></i>
+                    <div class="cycle-type">SUNRISE</div>
+                    <div class="cycle-time" id="sunrise-time">00:00 AM</div>
+                </div>
+                <div class="cycle-graph-container" id="sun-graph">
+                    <div class="sun-moon-icons" id="sun-icon"
+                        style="--degrees: 180deg; --transform-origin: 50% 100%; --align-items: flex-end">
+                        <i class="fa-solid fa-sun"
+                            style="--background: var(--color-orange); --color: var(--color-yellow); --top: 15px;"></i>
+                    </div>
+                    <div class="cycle-graph" style="--graph-color: var(--color-orange); --degrees: 0deg;">
+                    </div>
+                    <div class="cycle-total-time" id="sun-time">
+                        Not Available
+                    </div>
+                </div>
+                <div class="cycle-info" id="sunset">
+                    <i class="fa-solid fa-circle-half-stroke cycle-icon"
+                        style="--degrees: -90deg; --background: var(--color-dark); --color: var(--color-orange);"></i>
+                    <div class="cycle-type">SUNSET</div>
+                    <div class="cycle-time" id="sunset-time">00:00 PM</div>
+                </div>
+                <div class="cycle-info" id="moonset">
+                    <i class="fa-solid fa-circle-half-stroke cycle-icon"
+                        style="--degrees: -90deg; --background: var(--color-dark-gray); --color: var(--color-gray);"></i>
+                    <div class="cycle-type">MOONSET</div>
+                    <div class="cycle-time" id="moonset-time">00:00 AM</div>
+                </div>
+                <div class="cycle-graph-container" id="moon-graph">
+                    <div class="sun-moon-icons" id="moon-icon"
+                        style="--degrees: -90deg; --transform-origin: 50% 0; --align-items: flex-start;">
+                        <i class="fa-solid fa-moon"
+                            style="--background: var(--color-dark); --color: var(--color-gray); --top: -8px;"></i>
+                    </div>
+                    <div class="cycle-graph" style="--graph-color: var(--color-dark); --degrees: 180deg;">
+                    </div>
+                    <div class="cycle-total-time" id="moon-time">
+                        Not Available
+                    </div>
+                </div>
+                <div class="cycle-info" id="moonrise">
+                    <i class="fa-solid fa-circle-half-stroke cycle-icon"
+                        style="--degrees: 90deg; --background: var(--color-dark-gray); --color: var(--color-gray);"></i>
+                    <div class="cycle-type">MOONRISE</div>
+                    <div class="cycle-time" id="moonrise-time">00:00 PM</div>
+                </div>
+            </div>
             <span class="section-divider"></span>
             <header>Weather Data</header>
+            <div id="weather-data-container">
+                <div class="weather-item">
+                    <div class="item-text">
+                        <div class="item-icon">
+                            <i class="fa-solid fa-wind"></i>
+                        </div>
+                        Wind
+                    </div>
+                    <div class="item-data" id="wind">0 MPH</div>
+                </div>
+
+                <div class="weather-item">
+                    <div class="item-text">
+                        <div class="item-icon">
+                            <i class="fa-solid fa-location-arrow"></i>
+                        </div>
+                        Wind Degree
+                    </div>
+                    <div class="item-data"><span id="wind-degree">0</span><sup>o</sup></div>
+                </div>
+
+                <div class="weather-item">
+                    <div class="item-text">
+                        <div class="item-icon">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                        Humidity
+                    </div>
+                    <div class="item-data" id="humidity">0%</div>
+                </div>
+
+                <div class="weather-item">
+                    <div class="item-text">
+                        <div class="item-icon">
+                            <i class="fa-solid fa-cloud"></i>
+                        </div>
+                        Cloud
+                    </div>
+                    <div class="item-data" id="cloud"> 0%</div>
+                </div>
+
+                <div class="weather-item">
+                    <div class="item-text">
+                        <div class="item-icon">
+                            <i class="fa-solid fa-temperature-three-quarters"></i>
+                        </div>
+                        Feels Like
+                    </div>
+                    <div class="item-data"><span id="feelslike">-5</span><sup>o</sup></div>
+                </div>
+
+                <div class="weather-item">
+                    <div class="item-text">
+                        <div class="item-icon">
+                            <i class="fa-solid fa-wind"></i>
+                        </div>
+                        Gust
+                    </div>
+                    <div class="item-data" id="gust">0 MPH</div>
+                </div>
+            </div>
         </div>
     </div>
+
 </body>
+<!-- Scripts -->
+<script src="js/landing.js" type="module"></script>
 
 </html>

@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 import landingRouter from "./routes/landing.js";
+import weatherRouter from "./routes/weather.js";
 
 // Path to freenance folder
 const root = dirname(fileURLToPath(import.meta.url));
@@ -28,6 +29,8 @@ app.use(express.json());
 app.use(cookieParser());
 // Serves website pages
 app.use("/", landingRouter);
+// Weather api
+app.use("/api/weather", weatherRouter);
 
 // Handling connection errors
 process.on("unhandledRejection", (err) => {
