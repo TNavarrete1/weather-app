@@ -255,9 +255,9 @@ function debouncer(func, timeout = 500) {
     ) {
       layoutBg.src = "images/snow.jpg";
     } else if ([1087, 1273, 1276, 1279, 1282].includes(weather.condition_code)) {
-      layoutBg.src = "storm.jpg";
+      layoutBg.src = "images/storm.jpg";
     } else {
-      layoutBg.src = "random.jpg";
+      layoutBg.src = "images/random.jpg";
     }
   }
   const getWeatherData = async (searchText) => {
