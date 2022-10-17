@@ -10,7 +10,7 @@ export const current = async (req, res, next) => {
 
     res.status(201).json({
       message: "Successful api call",
-      city,
+      city: weather.data.location.name,
       localtime: weather.data.location.localtime,
       temp_f: current.temp_f,
       condition_text: current.condition.text,
