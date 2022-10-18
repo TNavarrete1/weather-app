@@ -148,7 +148,7 @@ function debouncer(func, timeout = 500) {
     let resHours = Math.floor(resMinutes / 60);
     resMinutes -= resHours * 60;
   
-    if (!resHours || !resMinutes) {
+    if (isNaN(resHours) || isNaN(resMinutes)) {
       return "Not Available";
     }
   
