@@ -120,7 +120,6 @@ html {
     width: 100%;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 50px;
-    touch-action: none;
     transition: all 0.2s ease-in-out;
 }
 
@@ -140,7 +139,6 @@ html {
     font-size: 15px;
     color: var(--color-light);
     background: transparent;
-    touch-action: none;
 }
 
 #search-container input::placeholder {
