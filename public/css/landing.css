@@ -1,14 +1,11 @@
 #layout {
     display: flex;
     position: relative;
-    width: 100vw;
-    min-width: 100vw;
     color: var(--color-light);
     font-family: var(--font-primary);
 }
 
 #layout-bg {
-    display: inline;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -16,7 +13,7 @@
     background-size: cover;
     background-color: var(--color-dark);
     z-index: -1;
-    filter: brightness(0.7);
+    filter: brightness(0.8);
 }
 
 #main-data {
@@ -24,9 +21,10 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+    gap: 20px;
     margin: 40px 60px 0 60px;
     padding-bottom: 80px;
-    width: 65%;
+    width: 65vw;
     overflow-x: scroll;
 }
 
@@ -37,14 +35,13 @@
 
 #main-data-wrapper {
     display: grid;
-    grid-template-columns: min-content min-content auto auto;
+    grid-template-columns: repeat(3, minmax(0, max-content));
     grid-template-rows: repeat(2, min-content);
     grid-template-areas:
-        "degrees icon city city"
-        "degrees weather-type date date";
+        "degrees icon city"
+        "degrees weather-type date";
     column-gap: 35px;
     row-gap: 20px;
-    white-space: wrap;
 }
 
 #degrees {
@@ -69,7 +66,6 @@
     grid-area: city;
     align-self: flex-end;
     font-size: 40px;
-    /* word-break: break-all; */
 }
 
 #date {
@@ -81,17 +77,16 @@
 
 #icon {
     grid-area: icon;
-    justify-self: center;
+    justify-self: flex-start;
     align-self: flex-end;
 }
 
 #weather-type {
     grid-area: weather-type;
-    justify-self: center;
+    justify-self: flex-start;
     align-self: flex-start;
     font-size: 20px;
     font-weight: 400;
-    white-space: nowrap;
 }
 
 #card {
@@ -99,7 +94,7 @@
     padding: 40px;
     height: 100%;
     min-height: 100vh;
-    width: 35%;
+    width: 35vw;
     min-width: 450px;
     backdrop-filter: blur(10px);
     background: rgba(0, 0, 0, 0.3);
@@ -116,6 +111,7 @@
     width: 100%;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 50px;
+    touch-action: none;
     transition: all 0.2s ease-in-out;
 }
 
@@ -324,19 +320,14 @@
 
 /* Media Queries */
 @media screen and (max-width: 1320px) {
-    #weather-type {
-        justify-self: flex-start;
-        white-space: inherit;
-    }
-
     #main-data-wrapper {
-        grid-template-columns: repeat(2, min-content) auto;
+        grid-template-columns: repeat(2, minmax(0, max-content));
         grid-template-rows: repeat(4, min-content);
         grid-template-areas:
-            "city city city"
-            "date date ."
-            "degrees icon ."
-            "degrees weather-type weather-type";
+            "city city "
+            "date date"
+            "degrees icon"
+            "degrees weather-type";
     }
 }
 
@@ -350,16 +341,15 @@
         margin: 0;
         padding: 40px 25px 40px 25px;
         min-height: 40vh;
-        width: 100%;
+        width: 100vw;
     }
 
     #card {
         min-height: 60vh;
-        width: 100%;
+        width: 100vw;
         border-left: none;
         border-top: 1px solid rgba(255, 255, 255, 0.3);
         box-shadow: none;
-        overflow: none;
     }
 }
 
