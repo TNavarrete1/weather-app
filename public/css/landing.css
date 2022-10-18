@@ -1,3 +1,12 @@
+body,
+html {
+    background: var(--bg-black);
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
 #layout {
     display: flex;
     position: relative;
@@ -111,7 +120,6 @@
     width: 100%;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 50px;
-    touch-action: none;
     transition: all 0.2s ease-in-out;
 }
 

@@ -290,10 +290,17 @@ function debouncer(func, timeout = 500) {
     }
     updatePageData(weather);
   };
+
+  const stopZoom = (event) => {
+    console.log(event);
+  }
   
   // Events ------------------->
   // Window events
   window.addEventListener("load", initializeWeatherData);
+
+  // Screen events
+  screen.addEventListener("orientationchange", stopZoom);
 
   // Click events
   document.querySelector("body").addEventListener("click", focusOutInput);
