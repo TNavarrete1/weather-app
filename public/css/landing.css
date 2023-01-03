@@ -326,6 +326,24 @@ html {
     color: var(--color-dark-gray);
 }
 
+#api-link-back {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    top: 25px;
+    gap: 10px;
+    font-size: 12px;
+}
+#api-link-back img {
+    object-fit: cover;
+    height: 100%;
+    width: 70px;
+}
+#link-back-txt a {
+    color: rgb(44, 189, 146);
+}
+
 /* Media Queries */
 @media screen and (max-width: 1320px) {
     #main-data-wrapper {
